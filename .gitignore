@@ -4,3 +4,6 @@
 
 /.vs/LJGHistoryService/v16/Server/sqlite3/storage.ide-shm
 /.vs/LJGHistoryService/v16/Server/sqlite3/storage.ide-wal
+/.vs/LJGHiricAngularAPI/v16/.suo
+/.vs/VSWorkspaceState.json
+/obj/Release/netcoreapp3.0/LJGHistoryService.csprojAssemblyReference.cache
