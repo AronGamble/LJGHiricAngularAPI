@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LJGHistoryService", "LJGHistoryService.csproj", "{1FDEE26C-7DEF-4436-8AD1-1F7F939BCFFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FDEE26C-7DEF-4436-8AD1-1F7F939BCFFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FDEE26C-7DEF-4436-8AD1-1F7F939BCFFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FDEE26C-7DEF-4436-8AD1-1F7F939BCFFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FDEE26C-7DEF-4436-8AD1-1F7F939BCFFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47E9C1CD-FCF7-461A-83D2-6965428809BE}
+	EndGlobalSection
+EndGlobal
