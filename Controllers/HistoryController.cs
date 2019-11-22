@@ -15,8 +15,8 @@ namespace LJGHistoryService.Controllers
 
         private readonly List<EmploymentItem> employmentItems = new List<EmploymentItem>() {
 
-                new EmploymentItem() { Id = 1, CompanyName = "Solicitors Regulation Authority", StartDate = DateTime.Parse("01/11/2018"), EndDate = DateTime.Parse("01/03/2019"), Location = "Birmingham", TypeOfEmployment = EmploymentType.Contract },
-                new EmploymentItem() { Id = 2, CompanyName = "ERGO", StartDate = DateTime.Parse("01/02/2017"), EndDate = DateTime.Parse("01/11/2018"), Location = "Birmingham", TypeOfEmployment = EmploymentType.Contract  }
+                new EmploymentItem() { Id = 1, CompanyName = "Solicitors Regulation Authority", StartDate = DateTime.Parse("01/11/2018").ToUniversalTime(), EndDate = DateTime.Parse("01/03/2019").ToUniversalTime(), Location = "Birmingham", TypeOfEmployment = EmploymentType.Contract },
+                new EmploymentItem() { Id = 2, CompanyName = "ERGO", StartDate = DateTime.Parse("01/02/2017").ToUniversalTime(), EndDate = DateTime.Parse("01/11/2018").ToUniversalTime(), Location = "Birmingham", TypeOfEmployment = EmploymentType.Contract  }
             };
 
         [HttpGet]
