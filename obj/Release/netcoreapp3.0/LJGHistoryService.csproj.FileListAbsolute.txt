@@ -107,4 +107,3 @@ C:\Users\alison\source\repos\LJGHistoryService\obj\Release\netcoreapp3.0\LJGHist
 C:\Users\alison\source\repos\LJGHistoryService\obj\Release\netcoreapp3.0\LJGHistoryService.csproj.CopyComplete
 C:\Users\alison\source\repos\LJGHistoryService\obj\Release\netcoreapp3.0\LJGHistoryService.dll
 C:\Users\alison\source\repos\LJGHistoryService\obj\Release\netcoreapp3.0\LJGHistoryService.pdb
-C:\Users\alison\source\repos\LJGHistoryService\obj\Release\netcoreapp3.0\LJGHistoryService.csprojAssemblyReference.cache
