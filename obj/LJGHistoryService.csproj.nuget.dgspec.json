@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alison\\source\\repos\\LJGHistoryService\\LJGHistoryService.csproj": {}
+    "C:\\Users\\AronGamble\\Source\\Repos\\LJGHiricAngularAPI\\LJGHistoryService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alison\\source\\repos\\LJGHistoryService\\LJGHistoryService.csproj": {
+    "C:\\Users\\AronGamble\\Source\\Repos\\LJGHiricAngularAPI\\LJGHistoryService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alison\\source\\repos\\LJGHistoryService\\LJGHistoryService.csproj",
+        "projectUniqueName": "C:\\Users\\AronGamble\\Source\\Repos\\LJGHiricAngularAPI\\LJGHistoryService.csproj",
         "projectName": "LJGHistoryService",
-        "projectPath": "C:\\Users\\alison\\source\\repos\\LJGHistoryService\\LJGHistoryService.csproj",
-        "packagesPath": "C:\\Users\\alison\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alison\\source\\repos\\LJGHistoryService\\obj\\",
+        "projectPath": "C:\\Users\\AronGamble\\Source\\Repos\\LJGHiricAngularAPI\\LJGHistoryService.csproj",
+        "packagesPath": "C:\\Users\\AronGamble\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AronGamble\\Source\\Repos\\LJGHiricAngularAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\alison\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AronGamble\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,9 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.episerver.com/feed/packages.svc/": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/solicitorsregulationauth/_packaging/DigitalRegisterPOCO/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
