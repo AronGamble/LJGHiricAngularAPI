@@ -22,11 +22,22 @@ namespace LJGHistoryService
             Configuration = configuration;
         }
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("http://themancave.studio", "http://localhost:4200", "http://localhost:8069");
+                });
+            });
+
             services.AddControllers();
         }
 
@@ -51,6 +62,8 @@ namespace LJGHistoryService
                 // UI strings that we have localized.
                 SupportedUICultures = supportedCultures
             });
+
+            app.UseCors(MyAllowSpecificOrigins);
 
 
             app.UseHttpsRedirection();
