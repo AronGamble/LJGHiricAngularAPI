@@ -111,5 +111,6 @@ C:\Users\alison\source\repos\LJGHistoryService\bin\Release\netcoreapp3.0\System.
 C:\Users\alison\source\repos\LJGHistoryService\bin\Release\netcoreapp3.0\System.Web.Http.dll
 C:\Users\alison\source\repos\LJGHistoryService\bin\Release\netcoreapp3.0\System.Web.Http.Cors.dll
 C:\Users\alison\source\repos\LJGHistoryService\bin\Release\netcoreapp3.0\Newtonsoft.Json.Bson.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Release\netcoreapp3.0\Microsoft.WindowsAzure.Storage.dll
 C:\Users\alison\source\repos\LJGHistoryService\obj\Release\netcoreapp3.0\LJGHistoryService.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\alison\source\repos\LJGHistoryService\obj\Release\netcoreapp3.0\LJGHistoryService.csprojAssemblyReference.cache
