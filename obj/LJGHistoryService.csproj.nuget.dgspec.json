@@ -64,14 +64,6 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.0.0, )"
-            },
-            "Microsoft.WindowsAzure.ConfigurationManager": {
-              "target": "Package",
-              "version": "[3.2.3, )"
-            },
-            "WindowsAzure.Storage": {
-              "target": "Package",
-              "version": "[9.3.3, )"
             }
           },
           "imports": [

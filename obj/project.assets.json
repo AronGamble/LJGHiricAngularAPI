@@ -777,15 +777,6 @@
           }
         }
       },
-      "Microsoft.WindowsAzure.ConfigurationManager/3.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.WindowsAzure.Configuration.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.WindowsAzure.Configuration.dll": {}
-        }
-      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -2565,19 +2556,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "WindowsAzure.Storage/9.3.3": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "10.0.2"
-        },
-        "compile": {
-          "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
-        }
       }
     }
   },
@@ -3794,19 +3772,6 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
-      ]
-    },
-    "Microsoft.WindowsAzure.ConfigurationManager/3.2.3": {
-      "sha512": "pAFC2gHAuubgaw7hqSDuaEVMqip/Z0niCFVpUZ1Hg+HUw4BuMQDZnNXCm+S9SU2zPwaH8l8hXaxDXSQI438gMA==",
-      "type": "package",
-      "path": "microsoft.windowsazure.configurationmanager/3.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net40/Microsoft.WindowsAzure.Configuration.dll",
-        "lib/net40/Microsoft.WindowsAzure.Configuration.xml",
-        "microsoft.windowsazure.configurationmanager.3.2.3.nupkg.sha512",
-        "microsoft.windowsazure.configurationmanager.nuspec"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -8203,30 +8168,6 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
-    },
-    "WindowsAzure.Storage/9.3.3": {
-      "sha512": "VUV8j6dzkU/7vDgk5k+ob5g7nnch2fNByr0p9aOxMGFGk+tAnTehrZ4qnClF04CVozP1GNN2zrnbsxCmr+iZBg==",
-      "type": "package",
-      "path": "windowsazure.storage/9.3.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/Microsoft.WindowsAzure.Storage.dll",
-        "lib/net45/Microsoft.WindowsAzure.Storage.pdb",
-        "lib/net45/Microsoft.WindowsAzure.Storage.xml",
-        "lib/netstandard1.0/Microsoft.WindowsAzure.Storage.dll",
-        "lib/netstandard1.0/Microsoft.WindowsAzure.Storage.pdb",
-        "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll",
-        "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.pdb",
-        "lib/win8/Microsoft.WindowsAzure.Storage.dll",
-        "lib/win8/Microsoft.WindowsAzure.Storage.pdb",
-        "lib/wp8/Microsoft.WindowsAzure.Storage.dll",
-        "lib/wp8/Microsoft.WindowsAzure.Storage.pdb",
-        "lib/wpa/Microsoft.WindowsAzure.Storage.dll",
-        "lib/wpa/Microsoft.WindowsAzure.Storage.pdb",
-        "windowsazure.storage.9.3.3.nupkg.sha512",
-        "windowsazure.storage.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -8235,9 +8176,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 3.0.0",
       "Microsoft.Extensions.Logging.Debug >= 3.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.0.0",
-      "Microsoft.WindowsAzure.ConfigurationManager >= 3.2.3",
-      "WindowsAzure.Storage >= 9.3.3"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.0.0"
     ]
   },
   "packageFolders": {
@@ -8304,14 +8243,6 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.0.0, )"
-          },
-          "Microsoft.WindowsAzure.ConfigurationManager": {
-            "target": "Package",
-            "version": "[3.2.3, )"
-          },
-          "WindowsAzure.Storage": {
-            "target": "Package",
-            "version": "[9.3.3, )"
           }
         },
         "imports": [
@@ -8363,16 +8294,6 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.AspNet.WebApi.Cors 5.2.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.WebApi.Cors",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.WindowsAzure.ConfigurationManager 3.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.WindowsAzure.ConfigurationManager",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.0"
       ]
