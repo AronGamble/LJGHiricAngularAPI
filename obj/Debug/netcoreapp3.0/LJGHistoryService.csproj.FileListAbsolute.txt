@@ -2,7 +2,6 @@ C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\appsettin
 C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\appsettings.json
 C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
 C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\LJGHistoryService.exe
-C:\Users\alison\source\repos\LJGHistoryService\obj\Debug\netcoreapp3.0\LJGHistoryService.csprojAssemblyReference.cache
 C:\Users\alison\source\repos\LJGHistoryService\obj\Debug\netcoreapp3.0\staticwebassets\LJGHistoryService.StaticWebAssets.Manifest.cache
 C:\Users\alison\source\repos\LJGHistoryService\obj\Debug\netcoreapp3.0\staticwebassets\LJGHistoryService.StaticWebAssets.xml
 C:\Users\alison\source\repos\LJGHistoryService\obj\Debug\netcoreapp3.0\LJGHistoryService.AssemblyInfoInputs.cache
@@ -108,3 +107,9 @@ C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\LJGHistor
 C:\Users\alison\source\repos\LJGHistoryService\obj\Debug\netcoreapp3.0\LJGHistoryService.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\alison\source\repos\LJGHistoryService\obj\Debug\netcoreapp3.0\LJGHistoryService.dll
 C:\Users\alison\source\repos\LJGHistoryService\obj\Debug\netcoreapp3.0\LJGHistoryService.pdb
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\System.Web.Cors.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\System.Net.Http.Formatting.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\System.Web.Http.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\System.Web.Http.Cors.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft.WindowsAzure.Storage.dll
