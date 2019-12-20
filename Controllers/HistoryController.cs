@@ -44,7 +44,17 @@ namespace LJGHistoryService.Controllers
             foreach (var y in x)
             {
                 EmploymentType e = y.TypeOfEmployment == "1" ? EmploymentType.Permanent : EmploymentType.Contract;
-                empItems.Add(new EmploymentItem() { CompanyName = y.CompanyName, StartDate = y.StartDate, EndDate = y.EndDate, Id = int.Parse(y.RowKey), Location = y.Location, TypeOfEmployment = e, Description = y.Description });
+                empItems.Add(new EmploymentItem()
+                {
+                    CompanyName = y.CompanyName,
+                    StartDate = y.StartDate,
+                    EndDate = y.EndDate,
+                    Id = int.Parse(y.RowKey),
+                    Location = y.Location,
+                    TypeOfEmployment = e,
+                    Description = y.Description,
+                    Detail = y.Detail                    
+                });
             }
 
             return empItems;
@@ -73,7 +83,16 @@ namespace LJGHistoryService.Controllers
             foreach (var y in x)
             {
                 EmploymentType e = y.TypeOfEmployment == "1" ? EmploymentType.Permanent : EmploymentType.Contract;
-                contractResult  = new EmploymentItem() { CompanyName = y.CompanyName, StartDate = y.StartDate, EndDate = y.EndDate, Id = int.Parse(y.RowKey), Location = y.Location, TypeOfEmployment = e };
+                contractResult = new EmploymentItem()
+                {
+                    CompanyName = y.CompanyName,
+                    StartDate = y.StartDate,
+                    EndDate = y.EndDate,
+                    Id = int.Parse(y.RowKey),
+                    Location = y.Location,
+                    TypeOfEmployment = e,
+                    Detail = y.Detail
+                };
             }
 
             return contractResult;

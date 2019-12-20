@@ -14,8 +14,9 @@ namespace LJGHistoryService.Tables
         public DateTime EndDate { get; set; }
         public string TypeOfEmployment { get; set; }
         public string Description { get; set; }
+        public string Detail { get; set; }
 
-        public Contract(string rowKey, string companyName, string location, DateTime startDate, DateTime endDate, string typeOfEmployment, string description)
+        public Contract(string companyName, string location, DateTime startDate, DateTime endDate, string typeOfEmployment, string description, string detail)
         {
             CompanyName = companyName;
             Location = location;
@@ -23,6 +24,7 @@ namespace LJGHistoryService.Tables
             EndDate = endDate;
             TypeOfEmployment = typeOfEmployment;
             Description = description;
+            Detail = detail;
         }
 
         public Contract()
