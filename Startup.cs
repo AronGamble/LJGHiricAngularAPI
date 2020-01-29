@@ -22,23 +22,31 @@ namespace LJGHistoryService
             Configuration = configuration;
         }
 
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        //readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        readonly string MyAllowSpecificOrigins = "CorsPolicy";
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddCors();
+
             services.AddCors(options =>
             {
-                options.AddPolicy(MyAllowSpecificOrigins,
-                builder =>
-                {
-                    builder.WithOrigins("http://themancave.studio", "http://localhost:4200", "http://localhost:8069");
-                });
+                options.AddPolicy(
+                    MyAllowSpecificOrigins,
+                    builder => builder
+                                    .AllowAnyOrigin()
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod());
+
+                options.DefaultPolicyName = MyAllowSpecificOrigins;
             });
 
+
             services.AddControllers();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +70,9 @@ namespace LJGHistoryService
                 // UI strings that we have localized.
                 SupportedUICultures = supportedCultures
             });
+
+
+            //app.UseCors(options => options.WithOrigins("http://themancave.studio/login?returnUrl=%2Fvip", "http://themancave.studio", "http://localhost:4200", "http://localhost:8069").AllowAnyMethod());
 
             app.UseCors(MyAllowSpecificOrigins);
 
