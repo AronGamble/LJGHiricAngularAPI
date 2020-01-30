@@ -6,6 +6,7 @@ using LJGHistoryService.Models;
 using LJGHistoryService.Tables;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 
@@ -15,12 +16,6 @@ namespace LJGHistoryService.Controllers
     [ApiController]
     public class HistoryController : ControllerBase
     {
-
-        //private readonly List<EmploymentItem> employmentItems = new List<EmploymentItem>() {
-
-        //        new EmploymentItem() { Id = 1, CompanyName = "Solicitors Regulation Authority", StartDate = DateTime.Parse("01/11/2018").ToUniversalTime(), EndDate = DateTime.Parse("01/03/2019").ToUniversalTime(), Location = "Birmingham", TypeOfEmployment = EmploymentType.Contract },
-        //        new EmploymentItem() { Id = 2, CompanyName = "ERGO", StartDate = DateTime.Parse("01/02/2017").ToUniversalTime(), EndDate = DateTime.Parse("01/11/2018").ToUniversalTime(), Location = "Birmingham", TypeOfEmployment = EmploymentType.Contract  }
-        //    };
 
         private readonly string storageString = "DefaultEndpointsProtocol=https;AccountName=ljgwebsite;AccountKey=4+lge0bw2MN6o9Z4DssravCHaR1ZXuwN+1t26KM8Tb0w+gJeR90iQqFr6HQE/OCG+wjRrzx4+qU0eRLfjgtI6w==;EndpointSuffix=core.windows.net";
 
@@ -57,6 +52,8 @@ namespace LJGHistoryService.Controllers
                 });
             }
 
+
+
             return empItems;
         }
 
@@ -64,6 +61,7 @@ namespace LJGHistoryService.Controllers
         [HttpGet("{id}", Name = "Get")]
         public async Task<EmploymentItem> Get(int id)
         {
+       
 
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageString);
 
@@ -94,6 +92,10 @@ namespace LJGHistoryService.Controllers
                     Detail = y.Detail
                 };
             }
+
+            System.Diagnostics.Trace.TraceInformation($"Information requested for {contractResult.CompanyName}");
+            System.Diagnostics.Trace.TraceError($"False Error  {contractResult.CompanyName}");
+            System.Diagnostics.Trace.TraceWarning($"False Warning  {contractResult.CompanyName}");
 
             return contractResult;
         }
