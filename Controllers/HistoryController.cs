@@ -6,6 +6,7 @@ using LJGHistoryService.Models;
 using LJGHistoryService.Tables;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
@@ -17,7 +18,15 @@ namespace LJGHistoryService.Controllers
     public class HistoryController : ControllerBase
     {
 
-        private readonly string storageString = "DefaultEndpointsProtocol=https;AccountName=ljgwebsite;AccountKey=4+lge0bw2MN6o9Z4DssravCHaR1ZXuwN+1t26KM8Tb0w+gJeR90iQqFr6HQE/OCG+wjRrzx4+qU0eRLfjgtI6w==;EndpointSuffix=core.windows.net";
+        private readonly string storageString;
+
+        private IConfiguration config;
+
+        public HistoryController (IConfiguration _config)
+        {
+            config = _config;
+            storageString = config.GetSection("LJGConfig").GetSection("Storage").Value;
+        }
 
         [HttpGet]
         public async Task<IEnumerable<EmploymentItem>> Get()
@@ -52,7 +61,7 @@ namespace LJGHistoryService.Controllers
                 });
             }
 
-
+            
 
             return empItems;
         }
@@ -61,8 +70,7 @@ namespace LJGHistoryService.Controllers
         [HttpGet("{id}", Name = "Get")]
         public async Task<EmploymentItem> Get(int id)
         {
-       
-
+            
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageString);
 
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();

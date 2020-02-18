@@ -71,4 +71,14 @@ C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Swashbuck
 C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\alison\source\repos\LJGHistoryService\obj\Debug\netcoreapp3.0\LJGHistoryService.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\alison\source\repos\LJGHistoryService\obj\Debug\netcoreapp3.0\LJGHistoryService.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\alison\source\repos\LJGHistoryService\obj\Debug\netcoreapp3.0\LJGHistoryService.csprojAssemblyReference.cache
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.AzureAppServices.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Configuration.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\System.Text.Encodings.Web.dll
+C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\System.Text.Json.dll
