@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using LJGHistoryService.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -34,7 +36,17 @@ namespace LJGHistoryService
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "LJG API",
+                    Version = "v1",
+                    Description = "LJG Technical Experience API",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Aron Gamble",
+                        Email = "aron.gamble@gmail.com"
+                    }
+                });
             });
 
 
@@ -50,8 +62,20 @@ namespace LJGHistoryService
                 options.DefaultPolicyName = MyAllowSpecificOrigins;
             });
 
+            /* ReturnHttpNotAcceptable
+            * 
+            * Gets or sets the flag which decides whether an HTTP 406 Not Acceptable response
+            * will be returned if no formatter has been selected to format the response.             
+            * false by default
+            * 
+            * AddXmlDataContractSerializerFormatters
+            * 
+            * Allow Accept: Application/xml withou returning '406 Not Acceptable' status
+            */
+            services.AddControllers(setup => { setup.ReturnHttpNotAcceptable = true; }).AddXmlDataContractSerializerFormatters();
 
-            services.AddControllers();
+            services.AddScoped(typeof(IContractRepository), typeof(ContractRepository));
+            services.AddScoped(typeof(IAuthenticationRepository), typeof(AuthenticationRepository));
 
         }
 
@@ -65,7 +89,7 @@ namespace LJGHistoryService
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "LJG API V1");
             });
 
             if (env.IsDevelopment())

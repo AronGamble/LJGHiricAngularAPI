@@ -11,7 +11,7 @@ using Microsoft.WindowsAzure.Storage.Table;
 
 namespace LJGHistoryService.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/contact")]
     [ApiController]
     public class ContactController : ControllerBase
     {

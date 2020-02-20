@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LJGHistoryService.Models;
+using LJGHistoryService.Repositories;
 using LJGHistoryService.Tables;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,64 +14,67 @@ using Microsoft.WindowsAzure.Storage.Table;
 
 namespace LJGHistoryService.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/contracts")]
     [ApiController]
-    public class HistoryController : ControllerBase
+    public class ContractsController : ControllerBase
     {
 
         private readonly string storageString;
 
         private IConfiguration config;
+        private IContractRepository contractRepository;
 
-        public HistoryController (IConfiguration _config)
+        public ContractsController(IConfiguration _config, IContractRepository _contractRepository)
         {
             config = _config;
             storageString = config.GetSection("LJGConfig").GetSection("Storage").Value;
+            contractRepository = _contractRepository;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<EmploymentItem>> Get()
+        public IActionResult GetContracts()
         {
+            var contracts = contractRepository.GetAllContracts().Result;
 
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageString);
+            return Ok(contracts);
+        }
+        
 
-            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
+        [HttpGet("{id:int}")]
+        public IActionResult GetContract(int id)
+        {
+            EmploymentItem contractResult = contractRepository.GetContracts(id).Result;
 
-            CloudTable table = tableClient.GetTableReference("contracts");
-
-            TableQuery<Contract> query = new TableQuery<Contract>()
-                   .Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "ljgwebsite"));
-
-            var x = await table.ExecuteQuerySegmentedAsync(query, null);
-
-            var empItems = new List<EmploymentItem>();
-
-            foreach (var y in x)
+            if (contractResult == null)
             {
-                EmploymentType e = y.TypeOfEmployment == "1" ? EmploymentType.Permanent : EmploymentType.Contract;
-                empItems.Add(new EmploymentItem()
-                {
-                    CompanyName = y.CompanyName,
-                    StartDate = y.StartDate,
-                    EndDate = y.EndDate,
-                    Id = int.Parse(y.RowKey),
-                    Location = y.Location,
-                    TypeOfEmployment = e,
-                    Description = y.Description,
-                    Detail = y.Detail                    
-                });
+                return NotFound();
             }
 
-            
+            return Ok(contractResult);
 
-            return empItems;
+        }
+
+        [HttpPost]
+        public void AddContract([FromBody] string value)
+        {
+        }
+
+        [HttpPut]
+        public void UpdateContract(int id)
+        {
+        }
+
+        [HttpDelete]
+        public void DeleteContract(int id)
+        {
         }
 
 
-        [HttpGet("{id}", Name = "Get")]
-        public async Task<EmploymentItem> Get(int id)
+        [HttpGet("{id}/References")]
+        public async Task<EmploymentItem> GetReferences(int id)
         {
-            
+            // Replace this code, just a stub for testing
+
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageString);
 
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
@@ -101,17 +105,48 @@ namespace LJGHistoryService.Controllers
                 };
             }
 
-            System.Diagnostics.Trace.TraceInformation($"Information requested for {contractResult.CompanyName}");
-            System.Diagnostics.Trace.TraceError($"False Error  {contractResult.CompanyName}");
-            System.Diagnostics.Trace.TraceWarning($"False Warning  {contractResult.CompanyName}");
-
             return contractResult;
         }
 
 
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpGet("{id}/References/{referenceId}")]
+        public async Task<EmploymentItem> GetReferenceById(int id, int referenceId)
         {
+
+            // Replace this code, just a stub for testing
+
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageString);
+
+            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
+
+            CloudTable table = tableClient.GetTableReference("contracts");
+
+            var cond1 = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "ljgwebsite");
+            var cond2 = TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, id.ToString());
+
+            TableQuery<Contract> query = new TableQuery<Contract>()
+                   .Where(TableQuery.CombineFilters(cond1, TableOperators.And, cond2)).Take(1);
+
+            var x = await table.ExecuteQuerySegmentedAsync(query, null);
+            EmploymentItem contractResult = null;
+
+            foreach (var y in x)
+            {
+                EmploymentType e = y.TypeOfEmployment == "1" ? EmploymentType.Permanent : EmploymentType.Contract;
+                contractResult = new EmploymentItem()
+                {
+                    CompanyName = y.CompanyName,
+                    StartDate = y.StartDate,
+                    EndDate = y.EndDate,
+                    Id = int.Parse(y.RowKey),
+                    Location = y.Location,
+                    TypeOfEmployment = e,
+                    Detail = y.Detail
+                };
+            }
+
+
+            return contractResult;
         }
 
 

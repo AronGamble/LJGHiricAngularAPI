@@ -82,3 +82,4 @@ C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft
 C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\System.Text.Encodings.Web.dll
 C:\Users\alison\source\repos\LJGHistoryService\bin\Debug\netcoreapp3.0\System.Text.Json.dll
+C:\Users\alison\source\repos\LJGHistoryService\obj\Debug\netcoreapp3.0\LJGHistoryService.csprojAssemblyReference.cache

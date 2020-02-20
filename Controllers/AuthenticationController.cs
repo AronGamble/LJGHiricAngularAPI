@@ -6,38 +6,32 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
+using LJGHistoryService.Repositories;
 
 namespace LJGHistoryService.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/authentication")]
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
 
         private IConfiguration config;
+        public IAuthenticationRepository authRepo { get; }
 
-        public AuthenticationController(IConfiguration iConfig)
+        public AuthenticationController(IConfiguration iConfig, IAuthenticationRepository authRepository)
         {
             config = iConfig;
+            authRepo = authRepository;
         }
+
+
 
         [HttpPost]        
-        public User Post(User user)
+        public User GetToken(User user)
         {
-            var payload = new Dictionary<string, object> { { "claim1", user.Username } };
-
-            string secret = config.GetSection("LJGConfig").GetSection("JwtSecret").Value;
-
-            IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
-            IJsonSerializer serializer = new JsonNetSerializer();
-            IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
-            IJwtEncoder encoder = new JwtEncoder(algorithm, serializer, urlEncoder);
-
-            var token = encoder.Encode(payload, secret);
-            user.Token = token;
-
-
-            return user;
+            return authRepo.GetJWTToken(user);
         }
+
+       
     }
 }

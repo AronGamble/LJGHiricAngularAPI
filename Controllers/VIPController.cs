@@ -12,7 +12,7 @@ using Microsoft.WindowsAzure.Storage.Table;
 
 namespace LJGHistoryService.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/vip")]
     [ApiController]
     public class VIPController : ControllerBase
     {
