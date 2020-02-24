@@ -32,7 +32,7 @@ namespace LJGHistoryService.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetContracts()
+        public ActionResult<IEnumerable<EmploymentItem>> GetContracts()
         {
             var contracts = contractRepository.GetAllContracts().Result;
 
@@ -41,7 +41,7 @@ namespace LJGHistoryService.Controllers
         
 
         [HttpGet("{id:int}")]
-        public IActionResult GetContract(int id)
+        public ActionResult<EmploymentItem> GetContract(int id)
         {
             EmploymentItem contractResult = contractRepository.GetContracts(id).Result;
 

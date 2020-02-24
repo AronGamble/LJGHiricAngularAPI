@@ -27,9 +27,9 @@ namespace LJGHistoryService.Controllers
 
 
         [HttpPost]        
-        public User GetToken(User user)
+        public ActionResult<User> GetToken(User user)
         {
-            return authRepo.GetJWTToken(user);
+            return Ok(authRepo.GetJWTToken(user));
         }
 
        

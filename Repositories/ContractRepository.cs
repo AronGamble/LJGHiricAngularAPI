@@ -1,8 +1,10 @@
-﻿using LJGHistoryService.Models;
+﻿using AutoMapper;
+using LJGHistoryService.Models;
 using LJGHistoryService.Tables;
 using Microsoft.Extensions.Configuration;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,13 +14,19 @@ namespace LJGHistoryService.Repositories
     {
         private readonly string storageString;
         private readonly IConfiguration config;
+        public IMapper _mapper { get; }
 
-        public ContractRepository(IConfiguration _config)
+        public ContractRepository(IConfiguration _config, IMapper mapper)
         {
-            config = _config;
-            storageString = config.GetSection("LJGConfig").GetSection("Storage").Value;
-        }
+            config = _config ??
+                throw new ArgumentNullException(nameof(_config));
 
+            _mapper = mapper ??
+                throw new ArgumentNullException(nameof(mapper));
+
+            storageString = config.GetSection("LJGConfig").GetSection("Storage").Value;
+
+        }
 
 
 
@@ -38,6 +46,7 @@ namespace LJGHistoryService.Repositories
             foreach (var y in x)
             {
                 EmploymentType e = y.TypeOfEmployment == "1" ? EmploymentType.Permanent : EmploymentType.Contract;
+
                 empItems.Add(new EmploymentItem()
                 {
                     CompanyName = y.CompanyName,
@@ -51,7 +60,10 @@ namespace LJGHistoryService.Repositories
                 });
             }
 
-            return empItems;
+            var employmentItems = _mapper.Map<IEnumerable<EmploymentItem>>(x);
+
+            return employmentItems;
+           
         }
 
 
